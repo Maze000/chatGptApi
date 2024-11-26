@@ -17,14 +17,14 @@ async function getCompletion(prompt) {
 
     if (!response.ok) {
       const errorBody = await response.text();
-      throw new Error(`Error HTTP! Estado: ${response.status}, Detalles: ${errorBody}`);
+      throw new Error(`Error HTTP! : ${response.status}, Diteil: ${errorBody}`);
     }
 
     const data = await response.json();
-    console.log("Respuesta de la API:", data);
+    console.log("Reply API:", data);
     return data;
   } catch (error) {
-    console.error("Error al obtener datos de la API:", error);
+    console.error("Error API:", error);
     return null;
   }
 }
@@ -40,7 +40,7 @@ button.addEventListener("click", async () => {
 
   
   if (!userPrompt || userPrompt.trim().length === 0) {
-    alert("Por favor, ingresa un prompt válido.");
+    alert("Please, prompr valid");
     return;
   }
 
